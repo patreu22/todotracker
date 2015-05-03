@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ToDo Demo</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+
+  </head>
+  <body>
+        
+
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-default"> 
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="demoIndex.html">Demo Organizer</a>
+            </div>
+            <div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="demoIndex.html">All tasks</a></li>
+                <li><a href="demoAdd.html"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Add Todo</a></li>
+                <li><a href="demoImpressum.html">Impressum</a></li> 
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!--Pageheader -->
+        <div class="container"> 
+           <div class="jumbotron">
+            <h1>Demo Organizer.</h1>
+            <p>Your personal Todo webapp.</p>
+            <p>Save time. Now even in responsive webdesign.</p>
+          </div>
+        </div>
+
+        <!--Table with tasks to do -->
+        <div class="container">
+        <table class="text-center table table-striped table-hover">
+          <!-- Table Head-->
+          <thead>
+            <tr>
+              <th class="text-left">ToDo</th>
+              <th class="text-center">Deadline</th>
+              <th class="text-center">Progress</th>
+              <th class="text-right">
+                <!--Dropdown Button to sort tasks -->
+                <div class="dropdown">
+                   <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Sort by
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a>Name</a></li>
+                      <li class="divider"></li>
+                      <li><a>Deadline: soon to late</a></li>
+                      <li><a>Deadline: late to soon</a></li>
+                      <li class="divider"></li>
+                      <li><a>Progress: low to high</a></li>
+                      <li><a>Progress: high to low</a></li>
+                    </ul>
+                </div>
+              </th>
+            </tr>
+          </thead>
+      
+          <!--Table content-->
+          <tbody>
+              <tr>
+              <td class="text-left">Sign up for the Frontend Developer Confernce in San Francisco</td>
+              <td>04-29-2015</td>
+              <td> 
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+                    30%
+                  </div>
+                </div>
+              </td>
+              <td >
+                <div class="btn-group">
+                  <a href="demoEdit.html" role="button" class="btn btn-default">Edit</a>
+                  <button class="btn btn-default">Delete</button>
+                  <button class="btn btn-default" data-toggle="tooltip" title="Done?" data-placement="right"><span class="glyphicon glyphicon-check"></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left">Invite famous people for the launch party of Demo Organizer</td>
+              <td>05-31-2015</td>
+              <td> 
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    70%
+                   </div>
+                </div>
+              </td>
+            <td>
+              <div class="btn-group">
+                <button class="btn btn-default">Edit</button>
+                <button class="btn btn-default">Delete</button>
+                <button class="btn btn-default" data-toggle="tooltip" title="Done?" data-placement="right"><span class="glyphicon glyphicon-check"></button>
+              </div>
+            </td>
+            </tr>
+            <tr>
+              <td class="text-left">Buy birthday presents for my nephews</td>
+              <td>12-23-2015</td>
+              <td> 
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width:95%">
+                    95%
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-default">Edit</button>
+                  <button class="btn btn-default">Delete</button>
+                  <button class="btn btn-default" data-toggle="tooltip" title="Done?" data-placement="right"><span class="glyphicon glyphicon-check"></button>
+                </div>
+              </td>
+            </tr>
+              <tr>
+              <td class="text-left">Buy commercials at Times Square in New York</td>
+              <td>10-14-2015</td>
+              <td> 
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100" style="width:18%">
+                    18%
+                  </div>
+                </div>
+              </td>
+              <td >
+                <div class="btn-group">
+                  <button class="btn btn-default">Edit</button>
+                  <button class="btn btn-default">Delete</button>
+                  <button class="btn btn-default" data-toggle="tooltip" title="Done?" data-placement="right"><span class="glyphicon glyphicon-check"></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left">Force all employees to switch to Slack for company discount</td>
+              <td>06-13-2015</td>
+              <td> 
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+                    60%
+                   </div>
+                </div>
+              </td>
+              <td>
+              <div class="btn-group">
+                <button class="btn btn-default">Edit</button>
+                <button class="btn btn-default">Delete</button>
+                <button class="btn btn-default" data-toggle="tooltip" title="Done?" data-placement="right"><span class="glyphicon glyphicon-check"></button>
+              </div>
+            </td>
+            </tr>
+            <tr>
+              <td class="text-left">Implement Facebook Login for our awesome product</td>
+              <td>05-03-2015</td>
+              <td> 
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:45%">
+                    45%
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-default">Edit</button>
+                  <button class="btn btn-default">Delete</button>
+                  <button class="btn btn-default" data-toggle="tooltip" title="Done?" data-placement="right"><span class="glyphicon glyphicon-check"></button>
+                </div>
+              </td>
+            </tr>
+
+          <!--Script for auto-generated todos-->
+          <!--
+          <script>
+              var Ausgabe = "";
+              for (var i = 1; i <= 10; i++)
+                  Ausgabe = Ausgabe + '<tr><td class="text-left">Task ' + i +
+                  '</td><td>05-03-2015</td>' +
+                  '<td><div class="progress">' +
+                  '<div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:' + (i*7) + '%">' + (i*7) + '%</div>' +
+                  '</div></td>' +
+                  '<td><div class="btn-group">' +
+                    '<button class="btn btn-default">Edit</button>' +
+                      '<button class="btn btn-default">Delete</button>' +
+                      '<button class="btn btn-default" data-toggle="tooltip" title="Done?" data-placement="right"><span class="glyphicon glyphicon-check"></button>' +
+                    '</div>' +
+                  '</td>' +
+                '</tr>';
+              document.write(Ausgabe);
+
+          </script>
+          -->
+
+
+          </tbody>
+        </table>
+        </div>
+      
+          <!--Add a to do-->
+          <div class="container">
+              <a href="demoAdd.html" role="button" class="btn btn-primary btn-block">Add a new task  
+              <span class="glyphicon glyphicon-edit"></span></a>
+          </div>
+
+
+                          <!--Initialize Tooltips-->
+                      <script>
+                      $(document).ready(function(){
+                      $('[data-toggle="tooltip"]').tooltip();   
+                      });
+                      </script>
+
+               
+  </body>
+</html>
