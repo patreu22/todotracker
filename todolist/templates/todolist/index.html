@@ -1,8 +1,25 @@
 {% extends "todolist/base_page.html" %}
 
-{% block title %}Movie listing{% endblock %}
+{% block title %}Todolist{% endblock %}
 
 {% block content %}
-    <h1>Movie Listing</h1>
-    <p>Movie list goes here</p>
+<h1>To-Dos</h1>
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Deadline</th>
+        <th>Progress</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for todo in object_list %}
+        <tr>
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.deadline }}</td>
+            <td>{{ todo.progress }}</td>
+            <td></td>
+            <td></td>
+        </tr>
+    {% endfor %}
+</table>
 {% endblock %}
