@@ -6,11 +6,11 @@ from todolist.models import Todo
 
 # Create your views here.
 class IndexView(ListView):
-    template_name = 'todolist/index.html'
+    template_name = 'index.html'
     model = Todo
 
 class CreateView(CreateView):
-    template_name = 'todolist/create.html'
+    template_name = 'create.html'
     model = Todo
     fields = ['title','deadline','progress']
     success_url = '/'
