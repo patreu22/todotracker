@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Demo Organizer - {% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
 
     <!--
     Bootstrap Einbindung aus Beispiel (weiteres am Ende des Dokuments)
@@ -18,15 +18,14 @@
     -->
 
     <!-- Bootstrap -->
-    <link href="{% static "todolist/css/bootstrap.min.css" %}" rel="stylesheet">
-    <link href="{% static "todolist/css/bootstrap-theme.min.css" %}" rel="stylesheet">
-    <link href="{% static "todolist/js/bootstrap.min.js" %}" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
-    <!-- Custom styles for this template -->
-    <link href="{% static "todolist/site.css" %}" rel="stylesheet">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -43,9 +42,9 @@
             </div>
             <div>
               <ul class="nav navbar-nav">
-                <li><a href="demoIndex.html">All tasks</a></li>
-                <li class="active"><a href="demoAdd.html"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Add Todo</a></li>
-                <li><a href="demoImpressum.html">Impressum</a></li> 
+                <li><a href="index.html">All tasks</a></li>
+                <li><a href="add.html"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Add Todo</a></li>
+                <li><a href="impressum.html">Impressum</a></li> 
               </ul>
             </div>
           </div>
