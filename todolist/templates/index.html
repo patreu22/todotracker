@@ -18,7 +18,7 @@
   <body>
 
         <!--Pageheader -->
-        <div class="container"> 
+        <div class="container">
            <div class="jumbotron">
             <h1>Demo Organizer.</h1>
             <p>Your personal Todo webapp.</p>
@@ -55,13 +55,13 @@
           </thead>
 
 
-          <tbody>           
+          <tbody>
             <!--Table content-->
             {% for todo in object_list %}
-            <tr> 
+            <tr>
               <td class="text-left">{{todo.title}}</td>
               <td> {{todo.deadline}}</td>
-              <td> 
+              <td>
                 <div class="progress">
                   <div class="progress-bar" role="progressbar" aria-valuenow="{{todo.progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{todo.progress}}%">
                     {{todo.progress}}%
@@ -70,13 +70,13 @@
               </td>
               <td >
                 <div class="btn-group">
-                  <a href="/" role="button" class="btn btn-default">Edit</a>
+                  <a href="{% url 'todo_edit' todo.id %}" role="button" class="btn btn-default">Edit</a>
                   <button class="btn btn-default">Delete</button>
                   <button class="btn btn-default" data-toggle="tooltip" title="Done?" data-placement="right"><span class="glyphicon glyphicon-check"></button>
                 </div>
               </td>
           {% endfor %}
-          
+
 
           <!--Script for auto-generated todos-->
           <!--
@@ -104,10 +104,10 @@
           </tbody>
         </table>
         </div>
-      
+
           <!--Add a to do-->
           <div class="container">
-              <a href="add.html" role="button" class="btn btn-primary btn-block">Add a new task  
+              <a href="add.html" role="button" class="btn btn-primary btn-block">Add a new task
               <span class="glyphicon glyphicon-edit"></span></a>
           </div>
 
@@ -115,11 +115,11 @@
                           <!--Initialize Tooltips-->
                       <script>
                       $(document).ready(function(){
-                      $('[data-toggle="tooltip"]').tooltip();   
+                      $('[data-toggle="tooltip"]').tooltip();
                       });
                       </script>
 
-               
+
   </body>
   {% endblock %}
 </html>

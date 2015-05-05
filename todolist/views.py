@@ -15,3 +15,8 @@ class AddView(CreateView):
     fields = ['title','deadline','progress']
     success_url = '/'
 
+class UpdateView(UpdateView):
+    template_name = 'edit.html'
+    model = Todo
+    fields = ['title','deadline','progress']
+    success_url = '/'
