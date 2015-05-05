@@ -9,6 +9,9 @@ class IndexView(ListView):
     template_name = 'index.html'
     model = Todo
 
+class ImpressumView(TemplateView):
+    template_name = 'impressum.html'
+
 class AddView(CreateView):
     template_name = 'add.html'
     model = Todo
@@ -20,3 +23,4 @@ class UpdateView(UpdateView):
     model = Todo
     fields = ['title','deadline','progress']
     success_url = '/'
+
