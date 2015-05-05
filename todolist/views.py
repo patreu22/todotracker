@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import generic
-from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView
 from todolist.models import Todo
 
 # Create your views here.
@@ -14,3 +14,4 @@ class AddView(CreateView):
     model = Todo
     fields = ['title','deadline','progress']
     success_url = '/'
+

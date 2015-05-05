@@ -34,22 +34,10 @@
           </div>
         </div>
 
-        <!--Add Form -->
-        <form method="post" class="form">
-          
-          {% for field in form %}
-          <div class="form-group">
-            {{ field.errors }}
-            {{ field.label_tag }}
-            {{ field }}
-          </div>
-          {% endfor %}
-            
-        </form>
         
         <div class="container">
-          <form role="form" method="post"> 
-            
+          <form role="form" method="post" class="form"> 
+            {% csrf_token %}
             <div class="form-group">
               <label for="todo">What do you have to do?</label>
               <input name="title" type="text" class="form-control" id="todo" maxlength="160">
@@ -60,7 +48,7 @@
             </div>
             <div class="form-group">
               <label for="progressbar">What is your current progress?</label>
-              <input oninput="progress.value=parseInt(progressbar.value)" type="range" id="progressbar" value="0"><output name="bla" for="progressbar">0</output> 
+              <input oninput="progressOutput.value=parseInt(progressbar.value)" type="range" id="progressbar" value="0" name="progress"><output name="progressOutput" for="progressbar">0</output> 
             </div>
         <!--  
         <button class="btn btn-primary btn-block" type="submit">Add task <span class="glyphicon glyphicon-edit"></span></button>
