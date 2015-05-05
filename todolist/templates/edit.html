@@ -4,34 +4,10 @@
 {% block title %}Create Movie{% endblock %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>ToDo Demo</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-
-
-
-  </head>
-  <body>
-
-        <!--Pageheader -->
         <div class="container">
            <div class="jumbotron">
             <h1>Demo Organizer.</h1>
-            <p>Add a new todo task.</p>
+            <p>Edit a new todo task.</p>
           </div>
         </div>
 
@@ -39,28 +15,31 @@
         <div class="container">
           <form role="form" method="post" class="form">
             {% csrf_token %}
-            <div class="form-group">
+
+            {% for field in form %}
+                <div class="form-group">
+                {{ field.errors }}
+                {{ field.label_tag }}
+                {{ field }}
+                </div>
+            {% endfor %}
+
+          <!--  <div class="form-group">
               <label for="todo">What do you have to do?</label>
-              <input type="text" class="form-control" id="todo" maxlength="160" value="Sign up for the Frontend Developer Confernce in San Francisco">
+              <input type="text" class="form-control" id="todo" name="title" maxlength="160">
             </div>
             <div class="form-group">
               <label for="deadline">When is the deadline?</label></br>
-              <input type="date" name="deadline" id="deadline" value="2015-04-29">
+              <input type="date" name="deadline" id="deadline">
             </div>
             <div class="form-group">
               <label for="progressbar">What is your current progress?</label>
-              <input oninput="x.value=parseInt(progressbar.value)" type="range" id="progressbar" value="30"><output name="x" for="progressbar">30</output>
-            </div>
-        <!--"Save changes" button-->
+              <input oninput="progressOutput.value=parseInt(progressbar.value)" type="range" id="progressbar" value="0" name="progress"><output name="progressOutput" for="progressbar">0</output>
+              </div>
+           -->
               <input type="submit" value="Submit" />
           </form>
 
 
 
     {% endblock %}
-
-
-
-
-  </body>
-</html>
