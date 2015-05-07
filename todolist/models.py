@@ -6,9 +6,11 @@ from django.utils import timezone
 
 class Todo(models.Model):
     title = models.CharField(max_length=160)
-    deadline = models.DateTimeField('Deadline')
+    deadline = models.DateField('Deadline')
     progress = models.DecimalField(max_digits=3, decimal_places=0)
     def __str__(self):              # __unicode__ on Python 2
         return self.title
+    def deadlineAsString(self):              # __unicode__ on Python 2
+        return str(self.deadline)
     def status(self):
         return progress == 100
