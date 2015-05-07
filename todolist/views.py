@@ -23,4 +23,3 @@ class UpdateView(UpdateView):
     model = Todo
     fields = ['title','deadline','progress']
     success_url = '/'
-
