@@ -34,16 +34,16 @@
 </head>
 <body>
    <!--Navigation Bar-->
-        <nav class="navbar navbar-default"> 
+        <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
               <a class="navbar-brand" href="/">Demo Organizer</a>
             </div>
             <div>
               <ul class="nav navbar-nav">
-                <li><a href="/">All tasks</a></li>
-                <li><a href="add.html"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Add Todo</a></li>
-                <li><a href="impressum.html">Impressum</a></li> 
+                <li><a href="{% url 'todolist:index'%}">All tasks</a></li>
+                <li><a href="{% url 'todolist:add'%}"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Add Todo</a></li>
+                <li><a href="{% url 'todolist:impressum'%}">Impressum</a></li> 
               </ul>
             </div>
           </div>
