@@ -30,11 +30,11 @@
             </div>
             <div class="form-group">
               <label for="deadline">When is the deadline?</label></br>
-              <input type="date" name="deadline" id="deadline" value="{{ object.deadline }}>
+              <input type="date" name="deadline" id="deadline" value="{{ object.deadline }}">
             </div>
             <div class="form-group">
               <label for="progressbar">What is your current progress?</label>
-              <input oninput="progressOutput.value=parseInt(progressbar.value)" type="range" id="progressbar" value="{{ object.progress }} name="progress"><output name="progressOutput" for="progressbar">{{ object.progress }}</output>
+              <input oninput="progressOutput.value=parseInt(progressbar.value)" type="range" id="progressbar" value="{{ object.progress }}" name="progress"><output name="progressOutput" for="progressbar">{{ object.progress }}</output>
               </div>
 
               <input type="submit" value="Submit" />
