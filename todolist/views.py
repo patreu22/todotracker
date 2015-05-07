@@ -28,3 +28,8 @@ class DeleteView(DeleteView):
     template_name = 'delete_confirm.html'
     model = Todo
     success_url = '/'
+
+class FinishView(UpdateView):
+    template_name = 'finish.html'
+    model = Todo
+    success_url = '/'

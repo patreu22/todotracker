@@ -6,5 +6,6 @@ urlpatterns = patterns('',
     url(r'^add', views.AddView.as_view(), name='add'),
     url(r'^impressum', views.ImpressumView.as_view(), name='impressum'),
     url(r'^edit/(?P<pk>\d+)$', views.UpdateView.as_view(), name='todo_edit'),
-    url(r'^delete/(?P<pk>\d+)$', views.DeleteView.as_view(), name='todo_delete'), 
+    url(r'^delete/(?P<pk>\d+)$', views.DeleteView.as_view(), name='todo_delete'),
+    url(r'^finish/(?P<pk>\d+)$', views.FinishView.as_view(), name='todo_finish'), 
 )
