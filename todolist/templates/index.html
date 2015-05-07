@@ -47,31 +47,23 @@
                       <a href="finish/{{todo.id}}" role="button" class="btn btn-default">Done?</a>
                     </div>
                   </td>
+                </tr>
               {% endif %}
             {% endfor %}
 
-
-          </tbody>
-        </table>
-        </div>
-
-
-        <!--Table with tasks to do -->
-        <div class="container">
-        <table class="text-center table table-striped table-hover">
-          <!-- Table Head-->
-          <thead>
             <tr>
-              <th class="text-left">ToDo</th>
-              <th class="text-center">Deadline</th>
-              <th class="text-center">Progress</th>
-              <th class="text-right"></th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
-          </thead>
+            <tr>
+              <td><h3>Finished Todos</h3></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
 
-
-          <tbody>
-            <!--Table content-->
             {% for todo in object_list %}
               {% if todo.progress >= 100  %}
                 <tr>
@@ -91,6 +83,7 @@
                       <a href="finish/{{todo.id}}" role="button" class="btn btn-default">Done?</a>
                     </div>
                   </td>
+                </tr>
               {% endif %}
             {% endfor %}
 
@@ -98,6 +91,9 @@
           </tbody>
         </table>
         </div>
+
+
+
 
 
           <!--Add a to do-->
