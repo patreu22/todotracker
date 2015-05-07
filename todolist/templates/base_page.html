@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>Demo Organizer - {% block title %}{% endblock %}</title>
 
     <!--
     Bootstrap Einbindung aus Beispiel (weiteres am Ende des Dokuments)
@@ -17,14 +18,15 @@
     -->
 
     <!-- Bootstrap -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="{% static "todolist/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "todolist/css/bootstrap-theme.min.css" %}" rel="stylesheet">
+    <link href="{% static "todolist/js/bootstrap.min.js" %}" rel="stylesheet">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="{% static "todolist/site.css" %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -37,13 +39,13 @@
         <nav class="navbar navbar-default"> 
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="/">Demo Organizer</a>
+              <a class="navbar-brand" href="demoIndex.html">Demo Organizer</a>
             </div>
             <div>
               <ul class="nav navbar-nav">
-                <li><a href="/">All tasks</a></li>
-                <li><a href="add.html"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Add Todo</a></li>
-                <li><a href="impressum.html">Impressum</a></li> 
+                <li><a href="demoIndex.html">All tasks</a></li>
+                <li class="active"><a href="demoAdd.html"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Add Todo</a></li>
+                <li><a href="demoImpressum.html">Impressum</a></li> 
               </ul>
             </div>
           </div>
