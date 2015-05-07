@@ -29,7 +29,7 @@
               <input type="text" class="form-control" id="todo" name="title" maxlength="160" value="{{ object.title }}">
             </div>
             <div class="form-group">
-              <label for="deadline">When is the deadline?</label></br>
+              <label for="deadline">When is the deadline?</label><br>
               <input type="date" name="deadline" id="deadline" value="{{ object.deadlineAsString }}">
             </div>
             <div class="form-group">
@@ -39,7 +39,6 @@
 
               <input type="submit" value="Submit" />
           </form>
-
-
+        </div>
 
     {% endblock %}
