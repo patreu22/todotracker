@@ -7,5 +7,6 @@ urlpatterns = patterns('',
     url(r'^impressum', views.ImpressumView.as_view(), name='impressum'),
     url(r'^edit/(?P<pk>\d+)$', views.UpdateView.as_view(), name='todo_edit'),
     url(r'^delete/(?P<pk>\d+)$', views.DeleteView.as_view(), name='todo_delete'),
-    url(r'^finish/(?P<pk>\d+)$', views.FinishView.as_view(), name='todo_finish'), 
+    url(r'^finish/(?P<pk>\d+)$', views.FinishView.as_view(), name='todo_finish'),
+    url(r'^reset/(?P<pk>\d+)$', views.ResetView.as_view(), name='todo_reset'),  
 )

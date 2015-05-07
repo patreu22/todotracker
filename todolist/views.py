@@ -33,3 +33,8 @@ class FinishView(UpdateView):
     template_name = 'finish.html'
     model = Todo
     success_url = '/'
+
+class ResetView(UpdateView):
+    template_name = 'reset.html'
+    model = Todo
+    success_url = '/'

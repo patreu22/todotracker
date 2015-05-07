@@ -1,0 +1,38 @@
+
+{% extends "base_page.html" %}
+
+{% block title %}Create Movie{% endblock %}
+
+{% block content %}
+        <div class="container">
+           <div class="jumbotron">
+            <h1>Demo Organizer.</h1>
+            <p>Reset Todo</p>
+          </div>
+        </div>
+
+
+        <div class="container">
+          <form role="form" method="post" class="form">
+            {% csrf_token %}
+
+            <!--{% for field in form %}
+                <div class="form-group">
+                {{ field.errors }}
+                {{ field.label_tag }}
+                {{ field }}
+                </div>
+            {% endfor %}-->
+
+              <div class="form-group">
+                <input type="text" class="hidden" id="todo" name="title" maxlength="160" value="{{ object.title }}">
+                <input class="hidden" type="date" name="deadline" id="deadline" value="{{ object.deadlineAsString }}">
+                <input class="hidden" oninput="progressOutput.value=parseInt(progressbar.value)" type="range" id="progressbar" value="0" name="progress"><output name="progressOutput" for="progressbar"></output>
+              </div>
+              <label for="submit">Do you really want to do {{ object.title }} again?</label>
+              <input type="submit" value="Submit" />
+          </form>
+
+
+
+    {% endblock %}
