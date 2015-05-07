@@ -29,8 +29,10 @@
                 <input class="hidden" type="date" name="deadline" id="deadline" value="{{ object.deadlineAsString }}">
                 <input class="hidden" oninput="progressOutput.value=parseInt(progressbar.value)" type="range" id="progressbar" value="100" name="progress"><output name="progressOutput" for="progressbar"></output>
               </div>
-              <label for="submit">Do you really want to finish {{ object.title }}?</label>
-              <input type="submit" value="Submit" />
+                <table>
+                  <tr><td><label for="submit">Do you really want to finish "{{ object.title }}"?</label></td></tr>
+                  <tr><td><input type="submit" value="Submit" /></td></tr>
+                </table>
           </form>
 
 
