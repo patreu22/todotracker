@@ -1,0 +1,39 @@
+{% extends "base_page.html" %}
+
+{% block title %}Create Movie{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+
+        <!--Pageheader -->
+        <div class="container">
+           <div class="jumbotron">
+            <h1>Demo Organizer.</h1>
+            <p>Add a new todo task.</p>
+          </div>
+        </div>
+
+
+        <div class="container">
+          <form role="form" method="post" class="form">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="todo">What do you have to do?</label>
+              <input name="title" type="text" class="form-control" id="todo" maxlength="160">
+            </div>
+            <div class="form-group">
+              <label for="deadline">When is the deadline?</label></br>
+              <input type="date" name="deadline" id="deadline">
+            </div>
+            <div class="form-group">
+              <label for="progressbar">What is your current progress?</label>
+              <input oninput="progressOutput.value=parseInt(progressbar.value)" type="range" id="progressbar" value="0" name="progress"><output name="progressOutput" for="progressbar">0</output>
+            </div>
+        <!--
+        <button class="btn btn-primary btn-block" type="submit">Add task <span class="glyphicon glyphicon-edit"></span></button>
+        -->
+        <input type="submit" value="Submit" />
+          </form>
+
+
+    {% endblock %}

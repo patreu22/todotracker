@@ -1,0 +1,110 @@
+
+{% extends "base_page.html" %}
+
+{% block content %}
+
+        <!--Pageheader -->
+        <div class="container">
+           <div class="jumbotron">
+            <h1>Demo Organizer.</h1>
+            <p>Your personal Todo webapp.</p>
+            <p>Save time. Now even in responsive webdesign.</p>
+          </div>
+        </div>
+
+        <!--Table with tasks to do -->
+        <div class="container">
+        <table class="text-center table table-striped table-hover">
+          <!-- Table Head-->
+          <thead>
+            <tr>
+              <th class="text-left">ToDo</th>
+              <th class="text-center">Deadline</th>
+              <th class="text-center">Progress</th>
+              <th class="text-right">
+                <!--Dropdown Button to sort tasks -->
+                <!--<div class="dropdown">
+                   <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Sort by
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a>Name</a></li>
+                      <li class="divider"></li>
+                      <li><a>Deadline: soon to late</a></li>
+                      <li><a>Deadline: late to soon</a></li>
+                      <li class="divider"></li>
+                      <li><a>Progress: low to high</a></li>
+                      <li><a>Progress: high to low</a></li>
+                    </ul>
+                </div>-->
+              </th>
+            </tr>
+          </thead>
+
+
+          <tbody>
+            <!--Table content-->
+            {% for todo in object_list %}
+            <tr>
+              <td class="text-left">{{todo.title}}</td>
+              <td> {{todo.deadline}}</td>
+              <td>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="{{todo.progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{todo.progress}}%">
+                    {{todo.progress}}%
+                  </div>
+                </div>
+              </td>
+              <td >
+                <div class="btn-group">
+                  <a href="edit/{{todo.id}}" role="button" class="btn btn-default">Edit</a>
+                  <a href="delete/{{todo.id}}" role="button" class="btn btn-default">Delete</a>
+                  <button class="btn btn-default" data-toggle="tooltip" title="Done?" data-placement="right"><span class="glyphicon glyphicon-check"></button>
+                </div>
+              </td>
+          {% endfor %}
+
+
+          <!--Script for auto-generated todos-->
+          <!--
+          <script>
+              var Ausgabe = "";
+              for (var i = 1; i <= 10; i++)
+                  Ausgabe = Ausgabe + '<tr><td class="text-left">Task ' + i +
+                  '</td><td>05-03-2015</td>' +
+                  '<td><div class="progress">' +
+                  '<div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:' + (i*7) + '%">' + (i*7) + '%</div>' +
+                  '</div></td>' +
+                  '<td><div class="btn-group">' +
+                    '<button class="btn btn-default">Edit</button>' +
+                      '<button class="btn btn-default">Delete</button>' +
+                      '<button class="btn btn-default" data-toggle="tooltip" title="Done?" data-placement="right"><span class="glyphicon glyphicon-check"></button>' +
+                    '</div>' +
+                  '</td>' +
+                '</tr>';
+              document.write(Ausgabe);
+
+          </script>
+          -->
+
+
+          </tbody>
+        </table>
+        </div>
+
+          <!--Add a to do-->
+          <div class="container">
+              <a href="add.html" role="button" class="btn btn-primary btn-block">Add a new task
+              <span class="glyphicon glyphicon-edit"></span></a>
+          </div>
+
+
+                          <!--Initialize Tooltips-->
+                      <script>
+                      $(document).ready(function(){
+                      $('[data-toggle="tooltip"]').tooltip();
+                      });
+                      </script>
+
+
+  </body>
+  {% endblock %}
