@@ -1,6 +1,8 @@
 import datetime
 from django.db import models
 from django.utils import timezone
+from django.core.urlresolvers import reverse
+from django.shortcuts import get_object_or_404
 
 # Create your models here.
 
@@ -14,3 +16,4 @@ class Todo(models.Model):
         return str(self.deadline)
     def status(self):
         return progress == 100
+
